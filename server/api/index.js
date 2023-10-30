@@ -1,17 +1,17 @@
 const app = require("express");
 import bodyParser from "body-parser";
 import cors from "cors";
-import authRouter from "./apps/auth.js";
+import authRouter from "../apps/auth";
 import dotenv from "dotenv";
-import registRouter from "./Website_Router/registRouter.js";
-import uploadRouter from "./Website_Router/uploadRouter.js";
-import jobRouter from "./apps/jobs.js";
-import categoryRouter from "./apps/category.js";
-import typeRouter from "./apps/type.js";
-import applyappliRouter from "./apps/applyappli.js";
-import jobAppRouter from "./apps/jobApp.js";
-import profileRouter from "./apps/profile.js";
-import followingRouter from "./apps/following.js";
+import registRouter from "../Website_Router/registRouter";
+import uploadRouter from "../Website_Router/uploadRouter";
+import jobRouter from "../apps/jobs";
+import categoryRouter from "../apps/category";
+import typeRouter from "../apps/type";
+import applyappliRouter from "../apps/applyappli";
+import jobAppRouter from "../apps/jobApp";
+import profileRouter from "../apps/profile";
+import followingRouter from "../apps/following";
 
 async function init() {
   dotenv.config();
