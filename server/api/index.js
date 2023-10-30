@@ -1,8 +1,9 @@
+/*
 import app from "../app";
 
 export default app;
+*/
 
-/*
 const app = require("express")();
 const { v4 } = require("uuid");
 
@@ -19,4 +20,3 @@ app.get("/api/item/:slug", (req, res) => {
 });
 
 module.exports = app;
-*/
