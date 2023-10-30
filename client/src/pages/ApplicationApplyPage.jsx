@@ -1,7 +1,7 @@
 // component and files
 import FindThatJobSideBar from "@/components/ProfessionalSideBar/FindThatJobSideBar.jsx";
 import ApplicationApplySection from "@/components/ApplicationApplySection";
-import SendAPPlicationButton from "@/images/ApllicationApplyPage/SendAPPlicationButton.png"; //img
+import SendAPPlicationButton from "@/images/ApllicationApplyPage/SendApplicationButton.png"; //img
 import FollowButton from "@/images/ApllicationApplyPage/FollowButton.svg"; //img
 import FollowButtonG from "@/images/ApllicationApplyPage/FollowButtonGrey.svg"; //img
 //functions, method and libaries
