@@ -7,7 +7,7 @@ import member4 from "@/images/landing-page/member4.png";
 import Jajha from "@/images/landing-page/member/Jajha.jpg";
 import Jumb from "@/images/landing-page/member/Jumb.jpg";
 import Keng from "@/images/landing-page/member/Keng.jpg";
-import Kaka from "@/images/landing-page/member/kaka.jpg";
+import Kaka from "@/images/landing-page/member/Kaka.jpg";
 import Keem from "@/images/landing-page/member/Keem.jpg";
 import githubIconButton from "@/images/landing-page/githubIconButton.png";
 import linkinIconButton from "@/images/landing-page/linkinIconButton.png";
