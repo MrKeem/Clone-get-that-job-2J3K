@@ -1,4 +1,4 @@
-import Logo from "../../images/landing-page/navlogo1.png";
+import Logo from "../../images/landing-page/navLogo1.png";
 import { useAuth } from "@/contexts/authentication";
 import { useNavigate } from "react-router-dom";
 
