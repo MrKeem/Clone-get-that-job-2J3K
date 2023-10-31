@@ -13,6 +13,8 @@ import {
 export function CategorySelector({ onCategoryChange }) {
   const [categories, setCategories] = useState([]);
 
+  axios.defaults.withCredentials = true;
+
   const handleCategoryChange = (e) => {
     const selectedCategory = e;
     onCategoryChange(selectedCategory);

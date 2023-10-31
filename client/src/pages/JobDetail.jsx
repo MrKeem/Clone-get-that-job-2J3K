@@ -20,6 +20,8 @@ function JobDetail() {
   const [companyFollowIds, setCompanyFollowIds] = useState([]);
   const { job_id } = useParams();
 
+  axios.defaults.withCredentials = true;
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getJobDetail = async () => {
     try {

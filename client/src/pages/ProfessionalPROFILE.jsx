@@ -35,6 +35,9 @@ function ProfessionalProfile() {
   const [fileSelected, setFileSelected] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState("");
   const [flag, setflag] = useState("");
+
+  axios.defaults.withCredentials = true;
+
   // constant
   const validurlPrefix = "https://www.linkedin.com/in/";
   // Function to format the date as year-month-day or else it won't work kub

@@ -14,6 +14,8 @@ import {
 export function TypeSelector({ onTypeChange }) {
   const [type, setType] = useState([]);
 
+  axios.defaults.withCredentials = true;
+
   const handleTypeChange = (e) => {
     const selectedType = e;
     onTypeChange(selectedType);

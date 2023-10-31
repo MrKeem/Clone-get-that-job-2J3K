@@ -39,6 +39,8 @@ function TestYourApp() {
   const [selectFilter, setSelectFilter] = useState("all"); // ตัวแปร selectFilter เริ่มต้นเป็น "all"
   const [confirmDialogOpen, setConfirmDialogOpen] = useState(false);
 
+  axios.defaults.withCredentials = true;
+
   const toggleAccordionItem = (app) => {
     app.isOpen = !app.isOpen;
     setApplications([...applications]);

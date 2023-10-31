@@ -23,6 +23,9 @@ function ApplicationApplyPage() {
   const { jobparams } = useParams();
   const [user_id, setuserparams] = useState("");
   const [followArray, setFollowArray] = useState([]);
+
+  axios.defaults.withCredentials = true;
+
   // useEffect
   useEffect(() => {
     //0

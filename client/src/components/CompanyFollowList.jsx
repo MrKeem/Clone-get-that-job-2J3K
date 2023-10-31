@@ -9,6 +9,8 @@ const CompanyFollowingList = () => {
   const [companyJobsCount, setCompanyJobsCount] = useState([]);
   const [companyFollow, setCompanyFollow] = useState([]);
 
+  axios.defaults.withCredentials = true;
+
   const getCompanyJobsCount = async () => {
     try {
       const results = await axios.get(

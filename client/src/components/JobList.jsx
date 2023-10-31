@@ -18,6 +18,8 @@ const JobList = (props) => {
   const category = props.category;
   const type = props.type;
 
+  axios.defaults.withCredentials = true;
+
   const getJobs = async (input) => {
     const { keywords, minSalary, maxSalary, category, type } = input;
     try {

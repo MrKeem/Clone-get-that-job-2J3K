@@ -17,6 +17,8 @@ function CompanyJobPage() {
   const [jobFollowingIds, setJobFollowingIds] = useState([]);
   const [companyFollowIds, setCompanyFollowIds] = useState([]);
 
+  axios.defaults.withCredentials = true;
+
   const getCompanyJobs = async () => {
     try {
       const results = await axios.get(

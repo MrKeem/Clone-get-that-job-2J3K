@@ -12,6 +12,8 @@ function LogInInfo() {
   const navigate = useNavigate();
   const [emailExists, setEmailExists] = useState(false);
 
+  axios.defaults.withCredentials = true;
+
   // 2. เราจะใช้ useForm(); เพื่อกำหนดค่าต่างๆ และส่งค่าที่จะใช้ในการจัดการ form
   const {
     handleSubmit, // <- ใช้เพื่อ manage เวลาส่งฟอร์ม

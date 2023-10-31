@@ -11,6 +11,8 @@ const JobFollowingList = () => {
   const [appIds, setAppIds] = useState([]);
   const [jobFollow, setJobFollow] = useState([]);
 
+  axios.defaults.withCredentials = true;
+
   const getJobApp = async () => {
     // console.log(`user id is ${userId}`);
     try {

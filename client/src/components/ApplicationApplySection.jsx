@@ -19,6 +19,9 @@ function ApplicationApplySection(pagedata) {
   const [professionalExperience, setProfessionalExperience] = useState("");
   const [interestedReason, setInterestedReason] = useState("");
   const [radioTicked, setRadioTicked] = useState(false);
+
+  axios.defaults.withCredentials = true;
+
   //navigation
   const navigate = useNavigate();
   //data destructuring
