@@ -47,7 +47,7 @@ function TestYourApp() {
   const getApplication = async () => {
     try {
       const results = await axios.get(
-        "http://localhost:4000/apply/myapplication"
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/apply/myapplication"
       );
       setApplications(results.data.data);
       console.log("results are", results);
@@ -58,9 +58,12 @@ function TestYourApp() {
 
   const handleConfirmDecline = async (application_id) => {
     try {
-      await axios.put(`http://localhost:4000/apply/${application_id}`, {
-        status: "declined",
-      });
+      await axios.put(
+        `https://clone-get-that-job-2-j3-k-backend.vercel.app/apply/${application_id}`,
+        {
+          status: "declined",
+        }
+      );
       setIsDeclined(true); // ตั้งค่าให้เป็น true เมื่อคลิกปุ่ม "Yes" ใน Dialog
       setConfirmDialogOpen(false); // ปิด dialog
       getApplication();

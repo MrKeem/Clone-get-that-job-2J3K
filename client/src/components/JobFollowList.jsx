@@ -14,7 +14,9 @@ const JobFollowingList = () => {
   const getJobApp = async () => {
     // console.log(`user id is ${userId}`);
     try {
-      const results = await axios.get("http://localhost:4000/jobapp");
+      const results = await axios.get(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/jobapp"
+      );
 
       const jobIds = results.data.data.map((obj) => {
         return obj.job_id;
@@ -33,7 +35,10 @@ const JobFollowingList = () => {
       const data = {
         jobId: jobId,
       };
-      await axios.post("http://localhost:4000/following/unfollowjob", data);
+      await axios.post(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/following/unfollowjob",
+        data
+      );
     } catch (error) {
       console.error("Error: unable to unfollow the job", error);
     }
@@ -63,7 +68,9 @@ const JobFollowingList = () => {
   const getJobFollow = async () => {
     // console.log(userId);
     try {
-      const results = await axios.get("http://localhost:4000/following/job");
+      const results = await axios.get(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/following/job"
+      );
       setJobFollow(results.data.data);
     } catch (error) {
       console.error("Error: Failed to fetch job following", error);

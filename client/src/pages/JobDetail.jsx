@@ -23,7 +23,9 @@ function JobDetail() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const getJobDetail = async () => {
     try {
-      const result = await axios.get(`http://localhost:4000/jobs/${job_id}`);
+      const result = await axios.get(
+        `https://clone-get-that-job-2-j3-k-backend.vercel.app/jobs/${job_id}`
+      );
       console.log(result.data.data);
       setJobDetail(result.data.data);
     } catch (error) {
@@ -55,7 +57,7 @@ function JobDetail() {
   const getCompanyFollow = async () => {
     try {
       const results = await axios.get(
-        `http://localhost:4000/following/companyinfo`
+        `https://clone-get-that-job-2-j3-k-backend.vercel.app/following/companyinfo`
       );
       const companyFollowIds = results.data.data.map((obj) => {
         return obj.recruiter_id;
@@ -114,7 +116,10 @@ function JobDetail() {
       const data = {
         recruiterId: recruiterId,
       };
-      await axios.post("http://localhost:4000/following/followcompany", data);
+      await axios.post(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/following/followcompany",
+        data
+      );
     } catch (error) {
       console.error("Error: unable to follow the company", error);
     }
@@ -128,7 +133,10 @@ function JobDetail() {
       const data = {
         recruiterId: recruiterId,
       };
-      await axios.post("http://localhost:4000/following/unfollowcompany", data);
+      await axios.post(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/following/unfollowcompany",
+        data
+      );
     } catch (error) {
       console.error("Error: unable to unfollow the company", error);
     }

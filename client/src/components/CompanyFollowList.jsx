@@ -12,7 +12,7 @@ const CompanyFollowingList = () => {
   const getCompanyJobsCount = async () => {
     try {
       const results = await axios.get(
-        `http://localhost:4000/following/companycount`
+        `https://clone-get-that-job-2-j3-k-backend.vercel.app/following/companycount`
       );
       setCompanyJobsCount(results.data.data);
       // console.log("company job count : ");
@@ -25,7 +25,7 @@ const CompanyFollowingList = () => {
   const getCompanyFollow = async () => {
     try {
       const results = await axios.get(
-        `http://localhost:4000/following/companyinfo`
+        `https://clone-get-that-job-2-j3-k-backend.vercel.app/following/companyinfo`
       );
       setCompanyFollow(results.data.data);
     } catch (error) {
@@ -39,7 +39,10 @@ const CompanyFollowingList = () => {
       const data = {
         recruiterId: recruiterId,
       };
-      await axios.post("http://localhost:4000/following/unfollowcompany", data);
+      await axios.post(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/following/unfollowcompany",
+        data
+      );
     } catch (error) {
       console.error("Error: unable to unfollow the job", error);
     }

@@ -55,7 +55,7 @@ function ShowJobPosingPage() {
   const getJob = async () => {
     try {
       const jobsResults = await axios.get(
-        `http://localhost:4000/jobs/recruiter/${param.jobId}`
+        `https://clone-get-that-job-2-j3-k-backend.vercel.app/jobs/recruiter/${param.jobId}`
       );
       setJob(jobsResults.data.data);
       console.log("Jobs get successful");
@@ -68,7 +68,7 @@ function ShowJobPosingPage() {
   const getCandidates = async (status) => {
     try {
       const candidatesResults = await axios.get(
-        `http://localhost:4000/apply/recruiter/${param.jobId}?status=${status}`
+        `https://clone-get-that-job-2-j3-k-backend.vercel.app/apply/recruiter/${param.jobId}?status=${status}`
       );
       setCandidates(candidatesResults.data);
       console.log("Candidates get successful");
@@ -119,7 +119,10 @@ function ShowJobPosingPage() {
   const closedJob = async (data) => {
     console.log(data);
     try {
-      await axios.put(`http://localhost:4000/jobs/${data.job_id}`, data);
+      await axios.put(
+        `https://clone-get-that-job-2-j3-k-backend.vercel.app/jobs/${data.job_id}`,
+        data
+      );
     } catch (error) {
       console.error("Error: unable to load jobs", error);
     }
@@ -128,7 +131,7 @@ function ShowJobPosingPage() {
   const changeStatus = async (data) => {
     try {
       await axios.put(
-        `http://localhost:4000/apply/recruiter/${data.application_id}`,
+        `https://clone-get-that-job-2-j3-k-backend.vercel.app/apply/recruiter/${data.application_id}`,
         data
       );
       console.log(`Application_id ${data.application_id} status changed`);

@@ -46,7 +46,7 @@ function ApplicationApplyPage() {
       try {
         const job_id = parseInt(jobparams);
         const getcompanyinfo = await axios.get(
-          `http://localhost:4000/apply/${job_id}`
+          `https://clone-get-that-job-2-j3-k-backend.vercel.app/apply/${job_id}`
         );
         setJobDetail(getcompanyinfo.data);
         // console.log(getcompanyinfo.data); // leave it in case adjust what data to fetch/not fetch
@@ -58,7 +58,7 @@ function ApplicationApplyPage() {
     const getUserDetail = async () => {
       try {
         const getuserinfo = await axios.get(
-          `http://localhost:4000/apply/u/${user_id}`
+          `https://clone-get-that-job-2-j3-k-backend.vercel.app/apply/u/${user_id}`
         );
         setUserDetail(getuserinfo.data[0]);
         //userDetail
@@ -106,12 +106,12 @@ function ApplicationApplyPage() {
     if (checkFollow == true) {
       // console.log("same");// leave this
       axios.delete(
-        `http://localhost:4000/apply/unfollow/${user_id}/${recruiter_idjob}`
+        `https://clone-get-that-job-2-j3-k-backend.vercel.app/apply/unfollow/${user_id}/${recruiter_idjob}`
       );
     } else {
       // console.log("not same");//leave this
       axios.post(
-        `http://localhost:4000/apply/follow/${user_id}/${recruiter_idjob}`
+        `https://clone-get-that-job-2-j3-k-backend.vercel.app/apply/follow/${user_id}/${recruiter_idjob}`
       );
     }
     setTimeout(() => {

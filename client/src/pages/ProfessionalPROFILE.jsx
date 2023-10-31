@@ -53,7 +53,9 @@ function ProfessionalProfile() {
   const { control } = useForm();
   //fetch data from database ka
   const getdatafromdatabase = async () => {
-    const response = await axios.get(`http://localhost:4000/profile/propro`);
+    const response = await axios.get(
+      `https://clone-get-that-job-2-j3-k-backend.vercel.app/profile/propro`
+    );
     const fetcheddata = response.data;
     // console.log(fetcheddata); เหลืออันนี้ไว้ check
     setFormData({ ...initialFormData, ...fetcheddata });
@@ -157,7 +159,10 @@ function ProfessionalProfile() {
         user_cv: formData.user_cv,
       };
       axios
-        .put("http://localhost:4000/profile/propro", updatedProfileData)
+        .put(
+          "https://clone-get-that-job-2-j3-k-backend.vercel.app/profile/propro",
+          updatedProfileData
+        )
         .then((response) => {
           toast.success("Profile updated successfully", response.data.message);
           // console.log("response.data.message:", response.data.message); // leave this log na kub in it's kinda common to get error here

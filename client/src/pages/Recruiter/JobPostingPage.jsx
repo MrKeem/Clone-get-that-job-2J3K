@@ -52,7 +52,7 @@ function JobPosting() {
   const getJobs = async (filter) => {
     try {
       const results = await axios.get(
-        `http://localhost:4000/jobs/recruiter?filter=${filter}`
+        `https://clone-get-that-job-2-j3-k-backend.vercel.app/jobs/recruiter?filter=${filter}`
       );
       console.log(filter);
       setJobs(results.data.data);
@@ -66,7 +66,10 @@ function JobPosting() {
   const closedJob = async (data) => {
     console.log(data);
     try {
-      await axios.put(`http://localhost:4000/jobs/${data.job_id}`, data);
+      await axios.put(
+        `https://clone-get-that-job-2-j3-k-backend.vercel.app/jobs/${data.job_id}`,
+        data
+      );
       getJobs("all");
       console.log(`Job_id ${data.job_id} have closed`);
     } catch (error) {

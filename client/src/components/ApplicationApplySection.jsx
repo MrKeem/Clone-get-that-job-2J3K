@@ -57,7 +57,7 @@ function ApplicationApplySection(pagedata) {
       console.log("professionalExperience :", professionalExperience);
       const formData = { currentCV, interestedReason, professionalExperience };
       await axios.post(
-        `http://localhost:4000/apply/${user_idt}/job-list/${job_idt}`,
+        `https://clone-get-that-job-2-j3-k-backend.vercel.app/apply/${user_idt}/job-list/${job_idt}`,
         formData
       );
       console.log("Application sent successfully :", formData);

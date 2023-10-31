@@ -83,7 +83,7 @@ function RecruiterProfile() {
   const getProfile = async () => {
     try {
       const results = await axios.get(
-        "http://localhost:4000/profile/recruiter"
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/profile/recruiter"
       );
       setProfile(results.data.data[0]);
       console.log(results.data.data[0]);
@@ -144,7 +144,10 @@ function RecruiterProfile() {
           };
 
           console.log("data before fetching", fetchData);
-          await axios.put("http://localhost:4000/profile/recruiter", fetchData);
+          await axios.put(
+            "https://clone-get-that-job-2-j3-k-backend.vercel.app/profile/recruiter",
+            fetchData
+          );
           console.log("Edit profile successful");
           toast({
             description: "Edit profile successful.",
@@ -163,7 +166,10 @@ function RecruiterProfile() {
           };
 
           console.log("data before fetching", fetchData);
-          await axios.put("http://localhost:4000/profile/recruiter", fetchData);
+          await axios.put(
+            "https://clone-get-that-job-2-j3-k-backend.vercel.app/profile/recruiter",
+            fetchData
+          );
           console.log("Edit profile successful");
           toast({
             description: "Edit profile successful.",

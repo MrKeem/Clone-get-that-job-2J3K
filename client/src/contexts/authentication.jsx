@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setErrorState(null);
       const result = await axios.post(
-        "http://localhost:4000/auth/user/login",
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/auth/user/login",
         data
       );
 
@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }) => {
     try {
       setErrorState(null);
       const result = await axios.post(
-        "http://localhost:4000/auth/recruiter/login",
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/auth/recruiter/login",
         data
       );
 
@@ -71,7 +71,10 @@ export const AuthProvider = ({ children }) => {
 
   const UserRegister = async (data) => {
     try {
-      await axios.post("http://localhost:4000/regist/professional", data);
+      await axios.post(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/regist/professional",
+        data
+      );
       console.log("Registration successful");
       setUserData(data);
     } catch (error) {
@@ -82,7 +85,10 @@ export const AuthProvider = ({ children }) => {
   const RecruiterRegister = async (data) => {
     try {
       console.log(data);
-      await axios.post("http://localhost:4000/regist/recruiter", data);
+      await axios.post(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/regist/recruiter",
+        data
+      );
       console.log("Registration successful");
       // setUserData(data);
     } catch (error) {

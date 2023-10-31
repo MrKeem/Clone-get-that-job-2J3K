@@ -20,7 +20,9 @@ export function CategorySelector({ onCategoryChange }) {
 
   const getCategories = async () => {
     try {
-      const results = await axios.get("http://localhost:4000/category");
+      const results = await axios.get(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/category"
+      );
       setCategories(results.data.result);
     } catch (error) {
       console.error("Error: Failed to fetch categories data");

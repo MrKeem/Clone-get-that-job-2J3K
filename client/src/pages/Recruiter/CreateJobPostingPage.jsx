@@ -71,7 +71,9 @@ function CreateJobPosting() {
 
   const getCategories = async () => {
     try {
-      const results = await axios.get("http://localhost:4000/category");
+      const results = await axios.get(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/category"
+      );
       //const categories = results.data.result;
       setCategories(results.data.result);
       console.log("Categories get successful");
@@ -82,7 +84,9 @@ function CreateJobPosting() {
 
   const getTypes = async () => {
     try {
-      const results = await axios.get("http://localhost:4000/type");
+      const results = await axios.get(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/type"
+      );
       //const categories = results.data.result;
       setTypes(results.data.result);
       console.log("Types get successful");
@@ -107,7 +111,10 @@ function CreateJobPosting() {
         category_name: capitalizedValue,
       };
       console.log(fetchCategory);
-      await axios.post("http://localhost:4000/category", fetchCategory);
+      await axios.post(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/category",
+        fetchCategory
+      );
       console.log("Create new category successful");
       toast({
         description: "Create new category successful.",
@@ -122,7 +129,10 @@ function CreateJobPosting() {
     try {
       try {
         console.log(data);
-        await axios.post("http://localhost:4000/jobs", data);
+        await axios.post(
+          "https://clone-get-that-job-2-j3-k-backend.vercel.app/jobs",
+          data
+        );
         console.log("Posting successful");
         toast({
           description: "Post job successful.",

@@ -63,7 +63,7 @@ function LogInInfo() {
   const fetchEmailFromDatabase = async (enteredEmail) => {
     try {
       const response = await axios.post(
-        "http://localhost:4000/regist/checkDupEmail",
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/regist/checkDupEmail",
         { email: enteredEmail }
       );
       setEmailExists(response.data.exists);

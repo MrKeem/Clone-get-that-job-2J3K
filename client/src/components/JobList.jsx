@@ -27,9 +27,12 @@ const JobList = (props) => {
       params.append("maxSalary", maxSalary);
       params.append("category", category);
       params.append("type", type);
-      const results = await axios.get("http://localhost:4000/jobs", {
-        params,
-      });
+      const results = await axios.get(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/jobs",
+        {
+          params,
+        }
+      );
 
       setJobs(results.data.data);
     } catch (error) {
@@ -40,7 +43,9 @@ const JobList = (props) => {
   const getJobApp = async () => {
     // console.log(`user id is ${userId}`);
     try {
-      const results = await axios.get("http://localhost:4000/jobapp");
+      const results = await axios.get(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/jobapp"
+      );
 
       const jobIds = results.data.data.map((obj) => {
         return obj.job_id;
@@ -75,7 +80,9 @@ const JobList = (props) => {
   const getJobFollowing = async () => {
     // console.log(`user id is ${userId}`);
     try {
-      const results = await axios.get("http://localhost:4000/following/job");
+      const results = await axios.get(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/following/job"
+      );
       // console.log(results.data.data);
       const jobFollowingIds = results.data.data.map((obj) => {
         return obj.job_id;
@@ -97,7 +104,10 @@ const JobList = (props) => {
       const data = {
         jobId: jobId,
       };
-      await axios.post("http://localhost:4000/following/followjob", data);
+      await axios.post(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/following/followjob",
+        data
+      );
     } catch (error) {
       console.error("Error: unable to follow the job", error);
     }
@@ -112,7 +122,10 @@ const JobList = (props) => {
       const data = {
         jobId: jobId,
       };
-      await axios.post("http://localhost:4000/following/unfollowjob", data);
+      await axios.post(
+        "https://clone-get-that-job-2-j3-k-backend.vercel.app/following/unfollowjob",
+        data
+      );
     } catch (error) {
       console.error("Error: unable to unfollow the job", error);
     }
