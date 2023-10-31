@@ -44,6 +44,7 @@ async function init() {
   // test route
   app.get("/", (req, res) => {
     res.send("Hello Get That Job!");
+    res.json("Hello Get That Job!");
   });
 
   app.get("*", (req, res) => {

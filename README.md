@@ -2,6 +2,7 @@
 
 This is clone from Team to deploy in my repo, the OG is [here](https://github.com/kkantaaa/get-that-job-2J3K)
 About **Get that job** is a labor market, you can be professional find a job or recruiter find employee.
+![Landing page](https://github.com/MrKeem/Clone-get-that-job-2J3K/blob/deploy-success-1st/README%20Image/landingpage.png?raw=true)
 
 ## Description
 
@@ -12,3 +13,7 @@ In Get that job, you can **sign up** in professional or recruiter role and **log
 ## Build With
 
 This project build by **Vite/ReactJS** and style by **Tailwindcss**, **Shadcn-ui** in Front End and build by **Node.JS/Express**, **PostgreSQL** and **Supabase** in Back End.
+
+## **_Advise_**
+
+If you don't want to create a new ID, you can use this ![professional login](https://github.com/MrKeem/Clone-get-that-job-2J3K/blob/deploy-success-1st/README%20Image/login-professional.png?raw=true) for **log in** in professional and this ![recruiter login](https://github.com/MrKeem/Clone-get-that-job-2J3K/blob/deploy-success-1st/README%20Image/login-recruiter.png?raw=true) for **log in** in recruiter.
