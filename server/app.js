@@ -1,4 +1,4 @@
-import express from "express";
+import express from "express"; //const express = require("express"); import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import authRouter from "./apps/auth.js";
@@ -25,7 +25,13 @@ async function init() {
   // const port = 4000;
   const port = process.env.PORT || 4000;
 
-  app.use(cors());
+  app.use(
+    cors({
+      origin: ["https://clone-get-that-job-2-j3-k-frontend.vercel.app"],
+      methods: ["DELETE", "PUT", "POST", "GET"],
+      credentials: true,
+    })
+  );
   app.use(bodyParser.json());
 
   // router
