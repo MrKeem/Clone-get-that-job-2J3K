@@ -25,19 +25,7 @@ async function init() {
   // const port = 4000;
   const port = process.env.PORT || 4000;
 
-  app.use(
-    cors({
-      origin:
-        "https://clone-get-that-job-2-j3-k-frontend.vercel.app/recruiter/login",
-      credentials: true,
-    })
-  );
-
-  app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*"); //หรือใส่แค่เฉพาะ domain ที่ต้องการได้
-    res.header("Access-Control-Allow-Credentials", true);
-    next();
-  });
+  app.use(cors());
 
   app.use(bodyParser.json());
 
