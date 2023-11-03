@@ -27,7 +27,8 @@ async function init() {
 
   app.use(
     cors({
-      origin: "https://clone-get-that-job-2-j3-k-frontend.vercel.app",
+      origin:
+        "https://clone-get-that-job-2-j3-k-frontend.vercel.app/recruiter/login",
       credentials: true,
     })
   );
