@@ -25,9 +25,7 @@ async function init() {
   // const port = 4000;
   const port = process.env.PORT || 4000;
 
-  app.use(
-    cors({ origin: "https://clone-get-that-job-2-j3-k-frontend.vercel.app" })
-  );
+  app.use(cors());
 
   app.use(bodyParser.json());
 
