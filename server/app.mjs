@@ -30,16 +30,16 @@ async function init() {
   app.use(bodyParser.json());
 
   // router
-  app.use("/regist", registRouter.default);
-  app.use("/auth", authRouter.default);
-  app.use("/upload", uploadRouter.default);
-  app.use("/jobs", jobRouter.default);
-  app.use("/jobapp", jobAppRouter.default);
-  app.use("/following", followingRouter.default);
-  app.use("/category", categoryRouter.default);
-  app.use("/type", typeRouter.default);
-  app.use("/apply", applyappliRouter.default);
-  app.use("/profile", profileRouter.default);
+  app.use("/regist", registRouter);
+  app.use("/auth", authRouter);
+  app.use("/upload", uploadRouter);
+  app.use("/jobs", jobRouter);
+  app.use("/jobapp", jobAppRouter);
+  app.use("/following", followingRouter);
+  app.use("/category", categoryRouter);
+  app.use("/type", typeRouter);
+  app.use("/apply", applyappliRouter);
+  app.use("/profile", profileRouter);
   // router
 
   // test route
@@ -59,4 +59,3 @@ async function init() {
 }
 
 init();
-export default app;
