@@ -33,9 +33,8 @@ async function init() {
   );
 
   app.use(function (req, res, next) {
-    res.setHeader("Access-Control-Allow-Origin", "*"); //หรือใส่แค่เฉพาะ domain ที่ต้องการได้
-    res.setHeader("Access-Control-Allow-Methods", "*");
-    res.setHeader("Access-Control-Allow-Credentials", true);
+    res.header("Access-Control-Allow-Origin", "*"); //หรือใส่แค่เฉพาะ domain ที่ต้องการได้
+    res.header("Access-Control-Allow-Credentials", true);
     next();
   });
 
