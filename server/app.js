@@ -27,7 +27,7 @@ async function init() {
 
   app.use(
     cors({
-      origin: ["https://clone-get-that-job-2-j3-k-frontend.vercel.app/"],
+      origin: ["http://localhost:5173"], //https://clone-get-that-job-2-j3-k-frontend.vercel.app
       methods: ["DELETE", "PUT", "POST", "GET"],
       credentials: true,
     })
