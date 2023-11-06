@@ -4,7 +4,7 @@ import bcrypt from "bcryptjs";
 import multer from "multer";
 
 const registRouter = Router();
-const multerUpload = multer({ dest: "../uploads/" });
+//const multerUpload = multer({ dest: "../uploads/" });
 
 // fetched user email from "users" table
 registRouter.post("/checkDupEmail", async (req, res) => {
