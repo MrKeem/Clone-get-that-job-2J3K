@@ -1,5 +1,10 @@
+/*
 import { Router } from "express";
 import { pool } from "../utils/db_connection.js";
+*/
+
+const { Router } = require("express");
+const { pool } = require("../utils/db_connection.js");
 
 const typeRouter = Router();
 
@@ -29,4 +34,6 @@ typeRouter.get("/", async (req, res) => {
   });
 });
 
-export default typeRouter;
+//export default typeRouter;
+
+module.exports = typeRouter;

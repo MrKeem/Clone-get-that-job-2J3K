@@ -1,8 +1,14 @@
+/*
 import { Router } from "express";
 import { pool } from "../utils/db_connection.js";
 import { protect } from "../utils/protect.js";
+*/
 
-const jobAppRouter = Router();
+const express = require("express");
+const { pool } = require("../utils/db_connection.js");
+const { protect } = require("../utils/protect.js");
+
+const jobAppRouter = express.Router();
 jobAppRouter.use(protect);
 
 jobAppRouter.get("/", async (req, res) => {
@@ -36,4 +42,6 @@ jobAppRouter.get("/", async (req, res) => {
   }
 });
 
-export default jobAppRouter;
+//export default jobAppRouter;
+
+module.exports = jobAppRouter;

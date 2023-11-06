@@ -1,3 +1,4 @@
+/*
 import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
@@ -12,6 +13,22 @@ import applyappliRouter from "./apps/applyappli.js";
 import jobAppRouter from "./apps/jobApp.js";
 import profileRouter from "./apps/profile.js";
 import followingRouter from "./apps/following.js";
+*/
+
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const authRouter = require("./apps/auth.js");
+const registRouter = require("./Website_Router/registRouter.js");
+const uploadRouter = require("./Website_Router/uploadRouter.js");
+const jobRouter = require("./apps/jobs.js");
+const categoryRouter = require("./apps/category.js");
+const typeRouter = require("./apps/type.js");
+const applyappliRouter = require("./apps/applyappli.js");
+const jobAppRouter = require("./apps/jobApp.js");
+const profileRouter = require("./apps/profile.js");
+const followingRouter = require("./apps/following.js");
 
 async function init() {
   dotenv.config();

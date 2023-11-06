@@ -1,6 +1,13 @@
+/*
 import { Router } from "express";
 import { pool } from "../utils/db_connection.js";
 import { protect } from "../utils/protect.js";
+
+*/
+
+const { Router } = require("express");
+const { pool } = require("../utils/db_connection.js");
+const { protect } = require("../utils/protect.js");
 
 const jobRouter = Router();
 jobRouter.use(protect);
@@ -281,21 +288,27 @@ jobRouter.put("/:job_id", async (req, res) => {
     };
     const job_id = req.params.job_id;
     if (req.body.closed_at) {
-      updatedJob={...updatedJob,closed_at: hasClosed ? new Date() : null,}
+      updatedJob = { ...updatedJob, closed_at: hasClosed ? new Date() : null };
     }
     if (req.body.category_name) {
       const categoryQuery = await pool.query(
         "SELECT * FROM job_categories WHERE category_name = $1",
         [updatedJob.category_name]
       );
-      updatedJob = {...updatedJob,job_category_id:parseInt(categoryQuery.rows[0].job_category_id, 10)}
+      updatedJob = {
+        ...updatedJob,
+        job_category_id: parseInt(categoryQuery.rows[0].job_category_id, 10),
+      };
     }
     if (req.body.type_name) {
       const typeQuery = await pool.query(
-              "SELECT * FROM job_types WHERE type_name = $1",
-              [updatedJob.type_name]
-            );
-      updatedJob = {...updatedJob,job_type_id:parseInt(typeQuery.rows[0].job_type_id, 10)}
+        "SELECT * FROM job_types WHERE type_name = $1",
+        [updatedJob.type_name]
+      );
+      updatedJob = {
+        ...updatedJob,
+        job_type_id: parseInt(typeQuery.rows[0].job_type_id, 10),
+      };
     }
     console.log({ updatedJob: updatedJob });
     const excludedKeys = [
@@ -336,8 +349,6 @@ jobRouter.put("/:job_id", async (req, res) => {
     });
   }
 });
-
-
 
 /*jobRouter.put("/:job_id", async (req, res) => {
   try {
@@ -397,4 +408,6 @@ jobRouter.put("/:job_id", async (req, res) => {
   }
 });*/
 
-export default jobRouter;
+//export default jobRouter;
+
+module.exports = jobRouter;

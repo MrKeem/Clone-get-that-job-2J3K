@@ -1,8 +1,17 @@
+/*
 import { Router } from "express";
 import { pool } from "../utils/db_connection.js";
 import { protect } from "../utils/protect.js";
 
 const applyappliRouter = Router();
+applyappliRouter.use(protect);
+*/
+
+const express = require("express");
+const { pool } = require("../utils/db_connection.js");
+const { protect } = require("../utils/protect.js");
+
+const applyappliRouter = express.Router();
 applyappliRouter.use(protect);
 
 // สำหรับ professional ใช้ เพื่อดู application ตัวเอง
@@ -255,6 +264,6 @@ applyappliRouter.delete(
   }
 );
 
-export default applyappliRouter;
-
+//export default applyappliRouter;
+module.exports = applyappliRouter;
 //("/apply/xxxxxxxxx", applyappliRouter);

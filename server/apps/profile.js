@@ -1,8 +1,14 @@
+/*
 import { Router } from "express";
 import { pool } from "../utils/db_connection.js";
 import { protect } from "../utils/protect.js";
+*/
 
-const profileRouter = Router();
+const express = require("express");
+const { pool } = require("../utils/db_connection.js");
+const { protect } = require("../utils/protect.js");
+
+const profileRouter = express.Router();
 profileRouter.use(protect);
 
 profileRouter.get("/recruiter", async (req, res) => {
@@ -142,4 +148,6 @@ profileRouter.put("/propro", async (req, res) => {
   }
 });
 
-export default profileRouter;
+//export default profileRouter;
+
+module.exports = profileRouter;

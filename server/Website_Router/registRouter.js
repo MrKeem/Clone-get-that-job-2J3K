@@ -1,9 +1,18 @@
+/*
 import { Router } from "express";
 import { pool } from "../utils/db_connection.js";
 import bcrypt from "bcryptjs";
 import multer from "multer";
 
 const registRouter = Router();
+*/
+const { Router } = require("express");
+const { pool } = require("../utils/db_connection.js");
+const bcrypt = require("bcryptjs");
+const multer = require("multer");
+
+const registRouter = Router();
+
 //const multerUpload = multer({ dest: "../uploads/" });
 
 // fetched user email from "users" table
@@ -274,4 +283,5 @@ registRouter.post("/recruiter", async (req, res) => {
 //   }
 // });
 
-export default registRouter;
+//export default registRouter;
+module.exports = registRouter;

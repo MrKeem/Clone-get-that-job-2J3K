@@ -1,3 +1,4 @@
+/*
 import { Router } from "express";
 import { supabase } from "../utils/supabaseClient.js";
 //
@@ -7,6 +8,11 @@ import { supabase } from "../utils/supabaseClient.js";
 //
 
 const uploadRouter = Router();
+*/
+const express = require("express");
+const { supabase } = require("../utils/supabaseClient.js");
+
+const uploadRouter = express.Router();
 
 // Set up an endpoint for file uploads
 uploadRouter.post("/upload", async (req, res) => {
@@ -34,4 +40,6 @@ uploadRouter.post("/upload", async (req, res) => {
   }
 });
 
-export default uploadRouter;
+//export default uploadRouter;
+
+module.exports = uploadRouter;

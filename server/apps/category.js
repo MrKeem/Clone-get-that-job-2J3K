@@ -1,7 +1,14 @@
+/*
 import { Router } from "express";
 import { pool } from "../utils/db_connection.js";
 
 const categoryRouter = Router();
+*/
+
+const express = require("express");
+const { pool } = require("../utils/db_connection.js");
+
+const categoryRouter = express.Router();
 
 categoryRouter.post("/", async (req, res) => {
   try {
@@ -22,10 +29,14 @@ categoryRouter.post("/", async (req, res) => {
   }
 });
 categoryRouter.get("/", async (req, res) => {
-    const result = await pool.query("SELECT * FROM job_categories ORDER BY category_name ASC ")
-    return res.json({
-        result: result.rows,
-    });
+  const result = await pool.query(
+    "SELECT * FROM job_categories ORDER BY category_name ASC "
+  );
+  return res.json({
+    result: result.rows,
+  });
 });
 
-export default categoryRouter;
+//export default categoryRouter;
+
+module.exports = categoryRouter;

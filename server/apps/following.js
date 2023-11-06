@@ -1,6 +1,12 @@
+/*
 import { Router } from "express";
 import { pool } from "../utils/db_connection.js";
 import { protect } from "../utils/protect.js";
+*/
+
+const { Router } = require("express");
+const { pool } = require("../utils/db_connection.js");
+const { protect } = require("../utils/protect.js");
 
 const followingRouter = Router();
 followingRouter.use(protect);
@@ -277,4 +283,6 @@ followingRouter.post("/unfollowcompany", async (req, res) => {
   }
 });
 
-export default followingRouter;
+//export default followingRouter;
+
+module.exports = followingRouter;

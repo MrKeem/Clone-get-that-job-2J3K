@@ -1,9 +1,17 @@
+/*
 import { Router } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { pool } from "../utils/db_connection.js";
 
 const authRouter = Router();
+*/
+const express = require("express");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const { pool } = require("../utils/db_connection.js");
+
+const authRouter = express.Router();
 
 authRouter.post("/user/login", async (req, res) => {
   const { email, password } = req.body;
@@ -91,4 +99,5 @@ authRouter.post("/recruiter/login", async (req, res) => {
   }
 });
 
-export default authRouter;
+//export default authRouter;
+module.exports = authRouter;
