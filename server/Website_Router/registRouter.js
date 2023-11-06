@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { pool } from "../utils/db_connection.js";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import multer from "multer";
 
 const registRouter = Router();
@@ -19,7 +19,7 @@ registRouter.post("/checkDupEmail", async (req, res) => {
     } else {
       res.json({ exists: false });
     }
-   } catch (error) {
+  } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
   }
@@ -85,7 +85,6 @@ registRouter.post("/test/post_tabledata", async (req, res) => {
 // Insert data to the UserTable for professional users
 
 registRouter.post("/professional", async (req, res) => {
-  
   try {
     const user = {
       email: req.body.email,
@@ -99,26 +98,25 @@ registRouter.post("/professional", async (req, res) => {
       user_education: req.body.education,
       user_cv: req.body.user_cv,
     };
-    
+
     const salt = await bcrypt.genSalt(14);
     user.password = await bcrypt.hash(user.password, salt);
-    
-    await pool.query(
-      "INSERT INTO users (email, password ) VALUES ($1, $2)",
-      [user.email, user.password]
-    );
-    
-    const userQuery = await pool.query(
-      "SELECT * FROM users WHERE email = $1",
-      [user.email]
-    );
+
+    await pool.query("INSERT INTO users (email, password ) VALUES ($1, $2)", [
+      user.email,
+      user.password,
+    ]);
+
+    const userQuery = await pool.query("SELECT * FROM users WHERE email = $1", [
+      user.email,
+    ]);
     console.log("User Query Result:", userQuery.rows);
     if (userQuery.rows.length === 0) {
       return res.status(410).json({ message: "user Email not found" });
     }
     await pool.query(
       "INSERT INTO user_profiles (user_id, user_name, user_phone, user_birthdate, user_linkedin, user_title, user_experience, user_education, user_cv) VALUES ($1, $2, $3, $4, $5,$6,$7,$8,$9)",
-      [ 
+      [
         parseInt(userQuery.rows[0].user_id, 10),
         user.user_name,
         user.user_phone,
@@ -127,7 +125,7 @@ registRouter.post("/professional", async (req, res) => {
         user.user_title,
         user.user_experience,
         user.user_education,
-        user.user_cv
+        user.user_cv,
       ]
     );
 
@@ -162,7 +160,6 @@ registRouter.post("/professional", async (req, res) => {
 //     await pool.query(
 //       "insert into usertable (email,password,name,phone,birthdate,linkedin,title,jobExp,education,havefile,confirmedpassword) values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11)",
 
-      
 //       [
 //         user.email,
 //         user.password,
@@ -187,7 +184,6 @@ registRouter.post("/professional", async (req, res) => {
 //   }
 // });
 
-
 // Insert data to the recruitertable for recruiter users
 //double table => recruiters + recruiter_information
 registRouter.post("/recruiter", async (req, res) => {
@@ -204,12 +200,12 @@ registRouter.post("/recruiter", async (req, res) => {
 
     const salt = await bcrypt.genSalt(14);
     user.password = await bcrypt.hash(user.password, salt);
-    
+
     await pool.query(
       "INSERT INTO recruiters (email, password ) VALUES ($1, $2)",
       [user.email, user.password]
     );
-    
+
     const recruiterQuery = await pool.query(
       "SELECT * FROM recruiters WHERE email = $1",
       [user.email]
@@ -218,11 +214,13 @@ registRouter.post("/recruiter", async (req, res) => {
     if (recruiterQuery.rows.length === 0) {
       return res.status(410).json({ message: "Recruiter email not found" });
     } else if (recruiterQuery.rows.length > 1) {
-      return res.status(410).json({ message: "Email address is already registered" });
+      return res
+        .status(410)
+        .json({ message: "Email address is already registered" });
     }
     await pool.query(
       "INSERT INTO recruiter_informations (recruiter_id, company_name, company_website, about_company, company_logo) VALUES ($1, $2, $3, $4, $5)",
-      [ 
+      [
         parseInt(recruiterQuery.rows[0].recruiter_id, 10),
         user.company_name,
         user.company_website,
