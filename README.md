@@ -1,5 +1,7 @@
 # Get that job - The labor market
 
+[Go To Web](https://clone-get-that-job-2-j3-k-frontend.vercel.app/)
+
 This is clone from Team to deploy in my repo, the OG is [here](https://github.com/kkantaaa/get-that-job-2J3K)
 About **Get that job** is a labor market, you can be professional find a job or recruiter find employee.
 ![Landing page](https://github.com/MrKeem/Clone-get-that-job-2J3K/blob/deploy-success-1st/README%20Image/landingpage.png?raw=true)
