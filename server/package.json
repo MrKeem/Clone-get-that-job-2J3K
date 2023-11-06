@@ -2,14 +2,14 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "app.cjs",
+  "main": "app.js",
   "engines": {
     "node": "18.x"
   },
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.cjs"
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
